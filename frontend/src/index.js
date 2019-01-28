@@ -15,8 +15,10 @@ import editorStore from './stores/editorStore';
 import userStore from './stores/userStore';
 import profileStore from './stores/profileStore';
 import contactStore from './stores/contactStore';
+import deckStore from './stores/deckStore';
 
 const stores = {
+  deckStore,
   contactStore,
   articlesStore,
   commentsStore,

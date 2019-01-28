@@ -51,6 +51,11 @@ const requests = {
       .then(responseBody),
 };
 
+const Decks = {
+  all: (page, lim = 10) =>
+    requests.get('/decks'),
+}
+
 const Contact = {
   sendContact: (subject, email, message) =>
   requests.post('/contact/', { body: JSON.stringify({subject, email, message}) }),
@@ -124,4 +129,5 @@ export default {
   Comments,
   Profile,
   Tags,
+  Decks,
 };
