@@ -5,12 +5,19 @@ const LIMIT = 10;
 class DeckStore {
   @observable isLoading = false;
   @observable decksRegistry = observable.map();
+
+  @observable page = 0;
+  @observable totalPagesCount = 0;
   @computed get decks() {
     return this.decksRegistry.values();
   };
   $req() {
       return agent.Decks.all(this.page, LIMIT);
     }
+
+  @action setPage(page) {
+    this.page = page;
+  }
   @action loadDecks() {
       this.isLoading = true;
       return this.$req()

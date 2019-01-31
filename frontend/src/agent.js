@@ -53,7 +53,7 @@ const requests = {
 
 const Decks = {
   all: (page, lim = 10) =>
-    requests.get('/decks'),
+    requests.get(`/decks?${limit(lim, page)}`),
 }
 
 const Contact = {
