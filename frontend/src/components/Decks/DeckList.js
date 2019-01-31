@@ -1,6 +1,7 @@
 import React from 'react';
 import { inject, observer } from 'mobx-react';
 import { withRouter } from 'react-router-dom';
+import Decks from "./Decks";
 
 
 @inject('deckStore')
@@ -17,16 +18,8 @@ export default class DeckList extends React.Component {
     ) :
     (
       <div>
-        {this.props.deckStore.decks.map(deck => {
-        return (
-          
-          <div key={deck.slug}>
-            <img src={deck.image} alt="deck"/>
-            <p><b>Deck name: {deck.name}</b></p>
-            <p><b>Owner: {deck.player.slug}</b></p>
-          </div>
-        );
-      })}
+        {<Decks
+        decks={this.props.deckStore.decks} />}
       </div>
       
     )
