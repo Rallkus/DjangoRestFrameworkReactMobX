@@ -12,7 +12,7 @@ import Contact from './Contact';
 import Profile from './Profile';
 import Register from './Register';
 import Settings from './Settings';
-import DeckList from './DeckList';
+import DeckList from './Decks/DeckList';
 
 @inject('userStore', 'commonStore')
 @withRouter
