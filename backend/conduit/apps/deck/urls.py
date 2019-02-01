@@ -3,11 +3,12 @@ from django.conf.urls import include, url
 from rest_framework.routers import DefaultRouter
 
 from .views import (
-    DeckAPIView
+    DeckViewSet
 )
 
 router = DefaultRouter(trailing_slash=False)
+router.register(r'decks', DeckViewSet)
 
 urlpatterns = [
-    url(r'^decks/?$', DeckAPIView.as_view()),
+    url(r'^', include(router.urls)),
 ]
