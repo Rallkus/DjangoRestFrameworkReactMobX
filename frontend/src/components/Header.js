@@ -29,6 +29,11 @@ const LoggedOutView = props => {
             Contact
           </Link>
         </li>
+        <li className="nav-item">
+          <Link to="/decks" className="nav-link">
+            Decks
+          </Link>
+        </li>
 
       </ul>
     );
@@ -73,7 +78,11 @@ const LoggedInView = props => {
             Contact
           </Link>
         </li>
-
+        <li className="nav-item">
+          <Link to="/decks" className="nav-link">
+            Decks
+          </Link>
+        </li>
       </ul>
     );
   }
