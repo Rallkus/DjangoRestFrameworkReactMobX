@@ -54,6 +54,8 @@ const requests = {
 const Decks = {
   all: (page, lim = 10) =>
     requests.get(`/decks?${limit(lim, page)}`),
+  get: slug =>
+    requests.get(`/decks/${slug}`),
 }
 
 const Contact = {

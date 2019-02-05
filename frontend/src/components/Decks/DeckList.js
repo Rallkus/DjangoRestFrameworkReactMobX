@@ -18,7 +18,7 @@ export default class DeckList extends React.Component {
   }
 
   render() {
-    return this.props.isLoading? (
+    return this.props.deckStore.isLoading? (
       <h1>...LOADING</h1>
     ) :
     (

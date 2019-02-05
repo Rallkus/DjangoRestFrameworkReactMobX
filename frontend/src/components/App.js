@@ -13,6 +13,7 @@ import Profile from './Profile';
 import Register from './Register';
 import Settings from './Settings';
 import DeckList from './Decks/DeckList';
+import Deck from './Decks/Deck';
 
 @inject('userStore', 'commonStore')
 @withRouter
@@ -46,6 +47,7 @@ export default class App extends React.Component {
             <Route path="/@:username" component={Profile} />
             <Route path="/@:username/favorites" component={Profile} />
             <Route path="/contact" component={Contact} />
+            <Route path="/decks/:slug" component={Deck} />
             <Route path="/decks" component={DeckList} />
             <Route path="/" component={Home} />
           </Switch>
