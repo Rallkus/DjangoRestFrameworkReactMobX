@@ -2,6 +2,7 @@ from django.db.models.signals import post_save
 from django.dispatch import receiver
 
 from conduit.apps.profiles.models import Profile
+from conduit.apps.player.models import Player
 
 from .models import User
 
@@ -13,3 +14,6 @@ def create_related_profile(sender, instance, created, *args, **kwargs):
     # has a profile.
     if instance and created:
         instance.profile = Profile.objects.create(user=instance)
+    
+    if instance and created:
+        instance.player = Player.objects.create(user=instance)
