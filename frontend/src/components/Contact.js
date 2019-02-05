@@ -88,3 +88,11 @@ export default class Contact extends React.Component {
     );
   }
 }
+Contact.propTypes = {
+  errors: PropTypes.object,
+  backendErrors: PropTypes.object,
+  thereAreErrors:PropTypes.bool,
+  contactStore:PropTypes.object,
+  frontendErrors:PropTypes.object,
+  thereAreFrontendErrors:PropTypes.bool
+}

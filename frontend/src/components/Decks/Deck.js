@@ -38,6 +38,6 @@ export default class Deck extends React.Component {
 }
 Deck.propTypes = {
   slug: PropTypes.string,
-  cards: PropTypes.oneOfType([null, Array]),
+  cards: PropTypes.oneOfType([null, Array]), /**It appears that type null is not implemented in prop-types */
   deckDetails:PropTypes.object
 }
