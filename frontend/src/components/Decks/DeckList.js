@@ -3,6 +3,7 @@ import { inject, observer } from 'mobx-react';
 import { withRouter } from 'react-router-dom';
 import Decks from "./Decks";
 import ListPagination from '../ListPagination';
+import PropTypes from 'prop-types';
 
 
 @inject('deckStore')
@@ -35,4 +36,11 @@ export default class DeckList extends React.Component {
     )
     
   }
+}
+DeckList.propTypes = {
+  page: PropTypes.number,
+  decks: PropTypes.array,
+  onSetPage:PropTypes.func,
+  totalPagesCount:PropTypes.number,
+  currentPage:PropTypes.number
 }

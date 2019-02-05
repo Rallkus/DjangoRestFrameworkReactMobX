@@ -1,6 +1,7 @@
 import React from 'react';
 import { inject, observer } from 'mobx-react';
 import { withRouter } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 
 @inject('deckStore')
@@ -10,7 +11,6 @@ export default class Deck extends React.Component {
   componentDidMount() {
     const slug = this.props.match.params.slug;
     this.props.deckStore.loadDeck(slug);
-    console.log(this.props.deckStore.deck);
   }
 
   render() {
@@ -20,7 +20,6 @@ export default class Deck extends React.Component {
         <p key={i}><b>{card}</b></p>
       )
     });
-    console.log(deckDetails);
     return !deckDetails? (
       <h1>...LOADING</h1>
     ) :
@@ -36,4 +35,9 @@ export default class Deck extends React.Component {
     )
     
   }
+}
+Deck.propTypes = {
+  slug: PropTypes.string,
+  cards: PropTypes.oneOfType([null, Array]),
+  deckDetails:PropTypes.object
 }
